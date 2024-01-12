@@ -30,7 +30,7 @@
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
                 <ul role="list" class="nav-menu-two w-list-unstyled">
                     <li><a href="main.html" class="nav-link">Home</a></li><li>
-                        <a href="#" class="nav-link">Feedback (SOON)</a></li><li>
+                        <a href="#" class="nav-link">Contact (SOON)</a></li><li>
                             <div data-hover="false" data-delay="0" class="nav-dropdown w-dropdown">
                                 <div class="nav-dropdown-toggle w-dropdown-toggle">
                                     <div class="nav-dropdown-icon w-icon-dropdown-toggle">
@@ -326,26 +326,243 @@
 <div class="background-1">
     <br>
     <br>
+    <!----------------------------------Modal------------------------------------>
+    <div class="marginchapter">
+        <div class="Chapter2-1">
+            <div class="header3">
+        <h1> III. BELIEFS AND OPINIONS ON THE TOPIC
+        </h1>
+        <hr class="">
+        <br>
+        <p>Here are the set of questions that our survey contains and the summary of our total respondents' outputs. 
+        </p>
+
+
+
+    <div class="ModalsMain">
+    <button class="btn custom-btn" data-target="#modal1">I</button>
+    <button class="btn custom-btn" data-target="#modal2">II</button>
+    <button class="btn custom-btn" data-target="#modal3">III</button>
+    <button class="btn custom-btn" data-target="#modal4">IV</button>
+    <button class="btn custom-btn" data-target="#modal5">V</button>
+    
+    
+    <div class="modal" id="modal1">
+      <div class="header">
+        <div class="title">Do you think finance is important for you?</div>
+        <button class="btn modal-btn" data-target="#modal1">&times;</button>
+      </div>
+      <div class="modalbody">
+        For them, Finance provides the foundation for organizing and understanding the flow of money, enabling us to make informed decisions about budgeting, spending, and saving. It serves as a discipline for managing money wisely, ultimately leading to financial stability and the pursuit of life goals. Whether it's running a household, achieving future financial objectives, or simply finding happiness through wise financial choices, finance is a vital tool. It empowers individuals, particularly young adults transitioning into adulthood, to navigate the complexities of modern life.
+      </div>
+    </div>
+    <div id="overlay"></div>
+    
+    <div class="modal" id="modal2">
+      <div class="header">
+        <div class="title">Do you believe that e-money will eventually replace traditional currencies altogether?</div>
+        <button class="btn modal-btn" data-target="#modal2">&times;</button>
+      </div>
+      <div class="modalbody">
+        Based on its inherent ease, improved security, and operational efficiency, some people claim that the transition to e-money is an inevitable trend. They argue that a growing proportion of the population will favor digital payment methods as long as technical development continues. A different group, however, expresses worries, highlighting issues including limited internet access, vulnerability to cyber threats and fraud, and the ongoing preference for physical money, particularly among small businesses.
+      </div>
+    </div>
+    <div id="overlay"></div>
+    
+    <div class="modal" id="modal3">
+      <div class="header">
+        <div class="title">Are you open to using e-money in your daily financial transactions?</div>
+        <button class="btn modal-btn" data-target="#modal3">&times;</button>
+      </div>
+      <div class="modalbody">
+<p>They hold the belief that e-money can alleviate the inconveniences associated with carrying physical cash, rendering transactions swifter and more efficient. Furthermore, they express an appreciation for the enhanced security offered by e-money in the realm of financial transactions. Conversely, there exists a cohort of individuals who exhibit hesitancy towards e-money adoption, citing diverse factors such as their level of technological familiarity and reservations pertaining to impulsive spending tendencies. The acceptance and integration of e-money into one's financial practices appear to be contingent upon individual proclivities and specific life circumstances. 
+</p>
+              </div>
+              </div>
+              </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    </div>
+
+    <div class="modal" id="modal4">
+        <div class="header">
+          <div class="title">What do you think are the potential benefits and drawbacks of using e-money?</div>
+          <button class="btn modal-btn" data-target="#modal4">&times;</button>
+        </div>
+        <div class="modalbody">
+            According to various opinions, Firstly, it reduces waste by promoting cashless transactions, reducing the need for paper currency. Secondly, It also enhances safety as it minimizes the risks associated with carrying physical cash. Lastly, e-money is praised for its convenience, allowing for quick and easy transactions, including bill payments. There are also drawbacks to consider. An issue as not all businesses and individuals have embraced e-money, limiting its usability in certain situations.
+        </div>
+      </div>
+      <div id="overlay"></div>
+
+      <div class="modal" id="modal5">
+        <div class="header">
+          <div class="title">Do you think that e-money is worth the potential risks? Why?</div>
+          <button class="btn modal-btn" data-target="#modal5">&times;</button>
+        </div>
+        <div class="modalbody">
+            Some individuals highlight the benefits of convenience and security, asserting that it’s a practical choice for modern transactions. They emphasize the role of trusted agencies in providing safety measures and believe that, when used cautiously, the advantages of e-money outweigh the risks, particularly for smaller transactions.
+        </div>
+      </div>
+      <div id="overlay"></div>
+      <br>
+    </div>
+</div>
+</div>
+    
+    
+    <!----------------------------------Modal------------------------------------>
+    
+    <script src="script.js"></script>
+    <script>
+        const btns = document.querySelectorAll("[data-target]");
+const close_btns = document.querySelectorAll(".modal-btn");
+const overlay = document.querySelector("#overlay");
+
+btns.forEach((btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector(btn.dataset.target).classList.add('active');
+        overlay.classList.add('active')
+    });
+}));
+
+close_btns.forEach((btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector(btn.dataset.target).classList.remove('active');
+        overlay.classList.remove('active')
+    });
+}));
+
+window.onclick = (e) => {
+    if(e.target == overlay){
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => modal.classList.remove("active"));
+        overlay.classList.remove('active')
+    }
+};
+    </script>
+    
+    
+    <!----------------------------------Modal------------------------------------>
+    
+    <style>
+    .ModalsMain {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    #overlay.active {
+      display: block;
+    }
+    #overlay {
+      display:none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    
+    }
+    
+    .modal-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+    }
+    
+    .modal.active {
+      top: 30%;
+    
+    }
+    .modal {
+      width: 450px;
+      position: fixed;
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: top 1s ease-out;
+      border: 1px solid #ccc;
+      border-radius:10px;
+      background-color: #fff;
+      z-index: 2;
+    }
+    
+    .header {
+      padding-left: 15px;
+      display: flex;
+      justify-content: space-between;
+      background-color: #00b1f5ff;
+      color: white;
+      border-bottom: 1px solid #ccc;
+      align-items: center;
+    }
+    
+    .modalbody {
+        color: black;
+      padding: 1rem;
+      background-color: white;
+    }
+    
+    .custom-btn {
+      width: 130px;
+      height: 40px;
+      color: #000000;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+       7px 7px 20px 0px rgba(0,0,0,.1),
+       4px 4px 5px 0px rgba(0,0,0,.1);
+      outline: none;
+    }
+    
+    .btn {
+      border: none;
+      color: #000;
+    }
+    .btn:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      direction: rtl;
+      z-index: -1;
+      box-shadow:
+       -7px -7px 20px 0px #fff9,
+       -4px -4px 5px 0px #fff9,
+       7px 7px 20px 0px #0002,
+       4px 4px 5px 0px #0001;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      color: #000;
+    }
+    .btn:hover:after {
+      left: auto;
+      right: 0;
+      width: 100%;
+    }
+    .btn:active {
+      top: 2px;
+    }
+    
+    </style>
+    
+    <!----------------------------------Modal------------------------------------>
+
 <div class="marginchapter">
     <div class="Chapter2">
         <div class="header3">
-    <h1> III. BELIEFS AND OPINIONS ON THE TOPIC
-    </h1>
-    <hr>
-    <br>
-    <p>Here are the set of questions that our survey contains and the summary of our total respondents' outputs. 
-    </p>
-    </div>
-    </div>
-
-            <div class="header3">
-        <br>
-        <p><b>Do you think finance is important for you?</b>
-<br><br>
-For them, Finance provides the foundation for organizing and understanding the flow of money, enabling us to make informed decisions about budgeting, spending, and saving. It serves as a discipline for managing money wisely, ultimately leading to financial stability and the pursuit of life goals. Whether it's running a household, achieving future financial objectives, or simply finding happiness through wise financial choices, finance is a vital tool. It empowers individuals, particularly young adults transitioning into adulthood, to navigate the complexities of modern life. 
-        </p>
-        </div>
-<br>
 <style>
     .header4 {
         text-align: right;
@@ -356,46 +573,8 @@ For them, Finance provides the foundation for organizing and understanding the f
     }
 </style>
     <br>
-    <div class="header4">
-        <br>
-        <p><b>Do you believe that e-money will eventually replace traditional currencies altogether?</b>
 
-<br><br>
-Based on its inherent ease, improved security, and operational efficiency, some people claim that the transition to e-money is an inevitable trend. They argue that a growing proportion of the population will favor digital payment methods as long as technical development continues. A different group, however, expresses worries, highlighting issues including limited internet access, vulnerability to cyber threats and fraud, and the ongoing preference for physical money, particularly among small businesses. 
-        </p>
-        </div>
 <br>
-<div class="header5">
-    <br>
-    <p><b>Are you open to using e-money in your daily financial transactions?</b>
-
-<br><br>
-They hold the belief that e-money can alleviate the inconveniences associated with carrying physical cash, rendering transactions swifter and more efficient. Furthermore, they express an appreciation for the enhanced security offered by e-money in the realm of financial transactions. Conversely, there exists a cohort of individuals who exhibit hesitancy towards e-money adoption, citing diverse factors such as their level of technological familiarity and reservations pertaining to impulsive spending tendencies. The acceptance and integration of e-money into one's financial practices appear to be contingent upon individual proclivities and specific life circumstances. 
-    </p>
-    </div>
-<br>
-
-<div class="header6">
-    <br>
-    <p><b>What do you think are the potential benefits and drawbacks of using e-money in the financial economy?
-    </b>
-
-<br><br>
-According to various opinions, Firstly, it reduces waste by promoting cashless transactions, reducing the need for paper currency. Secondly, It also enhances safety as it minimizes the risks associated with carrying physical cash. Lastly, e-money is praised for its convenience, allowing for quick and easy transactions, including bill payments. There are also drawbacks to consider. An issue as not all businesses and individuals have embraced e-money, limiting its usability in certain situations. 
-    </p>
-    </div>
-<br>
-<div class="header7">
-    <br>
-    <p><b>Do you think that e-money is worth the potential risks? Why?
-    </b>
-
-<br><br>
-Some individuals highlight the benefits of convenience and security, asserting that it’s a practical choice for modern transactions. They emphasize the role of trusted agencies in providing safety measures and believe that, when used cautiously, the advantages of e-money outweigh the risks, particularly for smaller transactions.
-    </div>
-<br>
-<br>
-</div>
 </div>
 <div class="marginchapter">
     <div class="Chapter-1">
@@ -430,10 +609,6 @@ Some individuals highlight the benefits of convenience and security, asserting t
     <div class="image1"><img src="image2.png" alt="PreferedContent"></div>
 <br>
 <br>
-<li>5 or 13.5%  of our Target Participants have answered 2 of our questions “How confident are you about the security of e-money transactions.”</li>
-<br><li>12 or 32.4% of our Target Participants have answered 3 of our questions “How confident are you about the security of e-money transactions.”</li>
-<br><li>16 or 43.2% of our Target Participants have answered 4 of our questions “How confident are you about the security of e-money transactions.”</li>
-<br><li>4 or 10.8% of our Target Participants have answered 5 of our questions “How confident are you about the security of e-money transactions.”</li>
 
 <div class="Chapter-2">
     <div class="header-2">
@@ -464,12 +639,6 @@ Some individuals highlight the benefits of convenience and security, asserting t
 <div class="image1"><img src="image3.png" alt="PreferedContent"></div>
 <br>
 <br>
-<li>6 or 16.2%  of our Target Participants have answered 1 of our questions “How frequently do you use e-money in your transactions.”</li>
-<br><li>5 or 13.5%  of our Target Participants have answered 2 of our questions “How frequently do you use e-money in your transactions.” </li>
-<br><li>10 or 27%  of our Target Participants have answered 3 of our questions “How frequently do you use e-money in your transactions.”</li>
-<br><li>10 or 27%  of our Target Participants have answered 4 of our questions “How frequently do you use e-money in your transactions.”</li>
-<br><li>6 or 16.2%  of our Target Participants have answered 5 of our questions “How frequently do you use e-money in your transactions.”</li>
-
 <div class="Chapter-2">
 <div class="header-2">
     <br>
@@ -502,11 +671,6 @@ Some individuals highlight the benefits of convenience and security, asserting t
 <div class="image1"><img src="image2.png" alt="PreferedContent"></div>
 <br>
 <br>
-<li>1 or 2.7% of our Target Participants have answered 2 of our questions “What’s your overall attitude towards e-money in general.”</li>
-<br><li>11 or 29.7% of our Target Participants have answered 3 of our questions “What’s your overall attitude towards e-money in general.”</li>
-<br><li>19 or 51.4% of our Target Participants have answered 4 of our questions “What’s your overall attitude towards e-money in general.”</li>
-<br><li>6 or 16.2 percent of our Target Participants have answered 5 of our questions “What’s your overall attitude towards e-money in general.”</li>
-
 <div class="Chapter-2">
 <div class="header-2">
     <br>
@@ -542,94 +706,247 @@ Some individuals highlight the benefits of convenience and security, asserting t
 
 </style>
 <div class="marginchapter">
-<div class="Chapter--1">
-    <div class="header--1">
-        <div class="disad">
-<h1> V. OUR CHOSEN STREAMING PLATFORM
-</h1>
-<hr>
-<br>
-<p>We believe that YouTube is the ultimate streaming platform for a multitude of compelling reasons, YouTube’s vast and diverse content library caters to a wide range of interests, from educational tutorials to entertainment and everything in between. It's completely appropriate because of its functionality and its efficiency in uploading videos, it's very accessible to our target audience and has several tools to boot for us to make our videos cleaner and more engaging, raking in more viewers. We think that we can reach our ideal audience with YouTube since it points its algorithm toward people who are interested in the topic we’re presenting.  
-</p>
-</div>
-<br>
-<p><b>Advantages:</b></p>
-<li class="bullet1">YouTube is easy to Use.</li>
-<li class="bullet1">Provides you with the chance to make money from your videos. You can get paid for your YouTube views.</li>
-<li class="bullet1">An easy way to share information.</li>
-<li class="bullet1">Make more of your material available to your audience.</li>
-<li class="bullet1">Backlinks are generated</li>
-<br>
+                    <!-- ..................Design.................... -->
 <style>
-    .disad {
-        text-align: right;
-    }
+    .FirstHR {
+             margin-right: 0px;
+             height: 5px;
+             background-color: grey;
+             width: 350px;
+         }
+
+         .SecondHR {
+             margin-left: 0px;
+             height: 5px;
+             background-color: grey;
+             width: 350px;
+         }
+
+         .centerizedHR {
+             height: 5px;
+             background-color: grey;
+             width: 350px;
+         }
+         .marginchapter {
+             margin: 50px;
+         }
+
+         .acc {
+margin: 90px 0;
+overflow: hidden;
+padding: 0;
+}
+
+.acc li {
+list-style-type: none;
+padding: 0;
+}
+
+.acc_ctrl {
+background: #FFFFFF;
+border: none;
+border-bottom: solid 1px #F2F2F2;
+cursor: pointer;
+display: block;
+outline: none;
+padding: 2em;
+position: relative;
+text-align: center;
+width: 100%;
+}
+
+.acc_ctrl:before {
+background: #44596B;
+content: '';
+height: 2px;
+margin-right: 37px;
+position: absolute;
+right: 0;
+top: 50%;
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-ms-transform: rotate(90deg);
+-o-transform: rotate(90deg);
+transform: rotate(90deg);
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+width: 14px;
+}
+
+.acc_ctrl:after {
+background: #44596B;
+content: '';
+height: 2px;
+margin-right: 37px;
+position: absolute;
+right: 0;
+top: 50%;
+width: 14px;
+}
+
+.acc_ctrl.active:before {
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-ms-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+}
+
+.acc_ctrl.active h2, .acc_ctrl:focus h2 {
+position: relative;
+}
+
+.acc_panel {
+background: white;
+display: none;
+overflow: hidden;
+}
+
+.righty {
+text-align: right;
+}
+
+.textalignleft {
+    text-align: left;
+}
 </style>
-<p><b>Disadvantages:</b></p>
-<li class="bullet1">YouTube is incredibly competitive, with each channel subject only having a handful of accounts on the top.</li>
-<li class="bullet1">The Algorithm only favors the popular creators.</li>
-<li class="bullet1">Quality is often poor, requiring good connection in order to play 
-    In better qualities
-    </li>
-    <br>
-    <hr>
-    <br>
+     <!-- ..................Scripts.................... -->
+<script>
+$(function() {
+$('.acc_ctrl').on('click', function(e) {
+e.preventDefault();
+if ($(this).hasClass('active')) {
+$(this).removeClass('active');
+$(this).next()
+.stop()
+.slideUp(300);
+} else {
+$(this).addClass('active');
+$(this).next()
+.stop()
+.slideDown(300);
+}
+});
+});
+</script>
 
-    <div class="disad">
-        <p>How can we overcome these disadvantages? Because YouTube is more likely to reward creators who are with their help, we can be more unique, and because our topic is already unique and interesting, we don't have anyone to compete with when it comes to our topic. As for YouTube's poor video quality, we can find ways to improve it except for the audience's internet connection because we don’t have control over that.</p>
-    </div>
-    <br>
-    <hr>
-<br>
-<div class="Chapter--1">
-    <div class="header--1">
-        <div class="disad">
-<h1> NEEDS OF VIEWERS
-</h1>
-<hr>
-<br>
-<p>In order for our team to recognize the needs of our viewers, We used 2 appropriate techniques of the Emphatize Stage in the Design Thinking Process which are the <b>5 Whys</b> and the <b>What? Why? How?</b> Here are the brainstormed questions that we addressed to come up with our statement.  
-</p>
+     <!-- ..................Design.................... -->
+     <div class="marginchapter">
+         <div class="Chapter1-2">
+     </div>
+     
+     <ul class="acc">
+         <li>
+           <button class="acc_ctrl"><h2>OUR CHOSEN STREAMING PLATFORM</h2></button>
+           <div class="acc_panel">
+            <div class="textalignleft">
+             <br>
+             <p>We believe that YouTube is the ultimate streaming platform for a multitude of compelling reasons, YouTube’s vast and diverse content library caters to a wide range of interests, from educational tutorials to entertainment and everything in between. It's completely appropriate because of its functionality and its efficiency in uploading videos, it's very accessible to our target audience and has several tools to boot for us to make our videos cleaner and more engaging, raking in more viewers. We think that we can reach our ideal audience with YouTube since it points its algorithm toward people who are interested in the topic we’re presenting.  
+            </p>
+            <br>
+            <p><b>Advantages:</b></p>
+            <p class="bullet1">YouTube is easy to Use.</p>
+            <p class="bullet1">Provides you with the chance to make money from your videos. You can get paid for your YouTube views.</p>
+            <p class="bullet1">An easy way to share information.</p>
+            <p class="bullet1">Make more of your material available to your audience.</p>
+            <p class="bullet1">Backlinks are generated</p>
+            <br>
+            <style>
+                .disad {
+                    text-align: right;
+                }
+            </style>
+            <p><b>Disadvantages:</b></p>
+            <p class="bullet1">YouTube is incredibly competitive, with each channel subject only having a handful of accounts on the top.</p>
+            <p class="bullet1">The Algorithm only favors the popular creators.</p>
+            <p class="bullet1">Quality is often poor, requiring good connection in order to play 
+                In better qualities
+            </p>
+                <br>
+                <hr>
+                <br>
+            
+                <div class="disad">
+                    <p>How can we overcome these disadvantages? Because YouTube is more likely to reward creators who are with their help, we can be more unique, and because our topic is already unique and interesting, we don't have anyone to compete with when it comes to our topic. As for YouTube's poor video quality, we can find ways to improve it except for the audience's internet connection because we don’t have control over that.</p>
+                </div>
+                <br>
+                <hr>
+            <br>
+             </p>
+           </div>
+        </div>
+        </li>
+        <br> <br>
+        <br> <br>
+        <br> <br>
+        <br> <br>
+        <br> 
+        <br>
+        <br>
+           <button class="acc_ctrl"><h2>NEEDS OF VIEWERS</h2></button>
+           <div class="acc_panel">
+            <div class="textalignleft">
+            <p>In order for our team to recognize the needs of our viewers, We used 2 appropriate techniques of the Emphatize Stage in the Design Thinking Process which are the <b>5 Whys</b> and the <b>What? Why? How?</b> Here are the brainstormed questions that we addressed to come up with our statement.  
+            </p>
+            <br>
+            <p><b>1st Method: 5 WHYs</b></p>
+            <li class="bullet1">Why did the target participants choose Educational Video Presentations among Podcasts and Webcasts?</li>
+            <li class="bullet1">Why do individuals engage and watch streamed content?</li>
+            <li class="bullet1">Why is educational video presentation a popular type of streamed content?</li>
+            <li class="bullet1">Why is it important for educational video content to be efficient and effective?</li>
+            <li class="bullet1">Why is it important for educational video content to be engaging?</li>
+            <br>
+            <p><b>2nd Method: What? How? and Why?</b></p>
+            <li class="bullet1">WHAT makes a good educational video presentation?</li>
+            <li class="bullet1">HOW do educational video presentations affect the target participants? </li>
+            <li class="bullet1">WHY do you think your target participants watch educational video presentations more? </li>
+            <br>
+            <br>
+            <p>After answering the questions above that we brainstormed we concluded that upon thorough research and putting our team shoes into our target audience we discovered that the reason why people of different ages, statuses, etc. watch streamed content is that they find it entertaining because it provides intriguing themes or videos that some people may find entertaining and informative because it can expand one's knowledge and provide helpful tips/advice, and finally it’s convenience because it provides simple access to films, music, sports, etc on the internet. The target audience prefers Educational Video Presentation among Podcasts and Webcasts for its efficient, effective, and engaging learning experience. This type of content can be accessed anytime and anywhere with an internet connection, providing convenience, variety, entertainment, and an efficient method of effectively communicating on a certain topic and can provide a deeper understanding.</p>
+            <br>
+            <div class="disad">
+                <p>Overall, our viewers can expect high-quality video content that is efficient, effective, and engaging in conveying information about e-money and its effects on the economy and individuals in a clear, concise, and insightful manner. We would also provide clear visuals about our topic to help our target audience understand and be knowledgeable about it. After all, A good educational video presentation should be brief, engaging, and informative, avoiding unnecessary elements like music and complex backgrounds. These presentations positively impact audience participation in class discussions, increasing productivity and encouraging active participation. The target audience watches these presentations for educational purposes, as they provide memorable content in speech, text, and images, and can be entertaining and convenient, as they can be viewed multiple times at any time.</p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            </div>
+            </div>
+           </div>
+         </li>
+       </ul>
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ </div>
 </div>
 <br>
-<p><b>1st Method: 5 WHYs</b></p>
-<li class="bullet1">Why did the target participants choose Educational Video Presentations among Podcasts and Webcasts?</li>
-<li class="bullet1">Why do individuals engage and watch streamed content?</li>
-<li class="bullet1">Why is educational video presentation a popular type of streamed content?</li>
-<li class="bullet1">Why is it important for educational video content to be efficient and effective?</li>
-<li class="bullet1">Why is it important for educational video content to be engaging?</li>
-<br>
-<p><b>2nd Method: What? How? and Why?</b></p>
-<li class="bullet1">WHAT makes a good educational video presentation?</li>
-<li class="bullet1">HOW do educational video presentations affect the target participants? </li>
-<li class="bullet1">WHY do you think your target participants watch educational video presentations more? </li>
-<br>
-<br>
-<p>After answering the questions above that we brainstormed we concluded that upon thorough research and putting our team shoes into our target audience we discovered that the reason why people of different ages, statuses, etc. watch streamed content is that they find it entertaining because it provides intriguing themes or videos that some people may find entertaining and informative because it can expand one's knowledge and provide helpful tips/advice, and finally it’s convenience because it provides simple access to films, music, sports, etc on the internet. The target audience prefers Educational Video Presentation among Podcasts and Webcasts for its efficient, effective, and engaging learning experience. This type of content can be accessed anytime and anywhere with an internet connection, providing convenience, variety, entertainment, and an efficient method of effectively communicating on a certain topic and can provide a deeper understanding.</p>
-<br>
-<div class="disad">
-    <p>Overall, our viewers can expect high-quality video content that is efficient, effective, and engaging in conveying information about e-money and its effects on the economy and individuals in a clear, concise, and insightful manner. We would also provide clear visuals about our topic to help our target audience understand and be knowledgeable about it. After all, A good educational video presentation should be brief, engaging, and informative, avoiding unnecessary elements like music and complex backgrounds. These presentations positively impact audience participation in class discussions, increasing productivity and encouraging active participation. The target audience watches these presentations for educational purposes, as they provide memorable content in speech, text, and images, and can be entertaining and convenient, as they can be viewed multiple times at any time.</p>
-</div>
-<br>
-<hr>
-<br>
-</div>
-</div>
-<div class="Chapter--1">
-    <div class="header--1">
 
-<h1> CHARACTERISTICS OF A GOOD STREAM
-</h1>
-<hr>
-<br>
-<p>In order to create a successful stream, it is crucial to pay close attention to the smallest details. It is imperative to maintain a high level of production value and ensure that the content is captivating and resonates with the intended audience. To make the stream easily shareable on various social media platforms, it is important to create a unique, imaginative, and humorous video that evokes strong emotions in the viewer. The video should be meticulously filmed and edited to include top-notch sound quality. By incorporating effective humor, stirring intense emotions, and providing a clear call to action, you can keep your audience engaged and interested. Whether your objective is to gain subscriptions or receive donations, it is vital to make sure that your message is both concise and compelling.
+                 <div class="marginchapter">
 
-<br><br>
+         <div class="Chapter1-2">
+     </div>
 
-<p>In order for our group to successfully create a stream, it is essential that we put these methods into practice. It is imperative that we closely follow the standards we consider to be of utmost importance, as this will not only help us gain support from our audience but also ensure that the content we produce is both enjoyable and of exceptional quality.</p>
-<br>
-<br>
-</p>
+     <ul class="acc">
+         <li>
+           <button class="acc_ctrl"><h2>CHARACTERISTICS OF A GOOD STREAM</h2></button>
+           <div class="acc_panel">
+            <p>In order to create a successful stream, it is crucial to pay close attention to the smallest details. It is imperative to maintain a high level of production value and ensure that the content is captivating and resonates with the intended audience. To make the stream easily shareable on various social media platforms, it is important to create a unique, imaginative, and humorous video that evokes strong emotions in the viewer. The video should be meticulously filmed and edited to include top-notch sound quality. By incorporating effective humor, stirring intense emotions, and providing a clear call to action, you can keep your audience engaged and interested. Whether your objective is to gain subscriptions or receive donations, it is vital to make sure that your message is both concise and compelling.
+            
+            <br><br>
+            
+            <p>In order for our group to successfully create a stream, it is essential that we put these methods into practice. It is imperative that we closely follow the standards we consider to be of utmost importance, as this will not only help us gain support from our audience but also ensure that the content we produce is both enjoyable and of exceptional quality.</p>
+            <br>
+            <br>
+            </p>
+             </p>
+           </div>
+         </li>
+         
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ </div>
 </div>
 </div>
 </div>
@@ -836,7 +1153,9 @@ width: 100%;
 </style>
 <div class="footer">
     <div class="footer-text">
-        <p>Please do give me the specified text needed to be placed in this location</p>
+        <p>This Website is only for educational purposes only.
+            <br>
+            @ 2023-2024 Septem Finanza. Website is fully for educational puroses and is not afflicated with any outside companies.
         <div class="footer-widget">
             <div class="footer-widget-heading">
                 <h3>Subscribe</h3>
